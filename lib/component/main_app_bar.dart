@@ -1,8 +1,15 @@
 import 'package:dusty_dust/const/colors.dart';
+import 'package:dusty_dust/model/stat_model.dart';
+import 'package:dusty_dust/model/status_model.dart';
 import 'package:flutter/material.dart';
 
 class MainAppBar extends StatelessWidget {
+  final StatusModel status;
+  final StatModel stat;
+
   const MainAppBar({
+    required this.status,
+    required this.stat,
     Key? key,
   }) : super(key: key);
 
@@ -38,14 +45,14 @@ class MainAppBar extends StatelessWidget {
                   height: 20.0,
                 ),
                 Image.asset(
-                  'asset/img/mediocre.png',
+                  status.imagePath,
                   width: MediaQuery.of(context).size.width / 2,
                 ),
                 const SizedBox(
                   height: 20.0,
                 ),
                 Text(
-                  '보통',
+                  status.label,
                   style: ts.copyWith(
                     fontSize: 40.0,
                     fontWeight: FontWeight.w700,
@@ -55,7 +62,7 @@ class MainAppBar extends StatelessWidget {
                   height: 8.0,
                 ),
                 Text(
-                  '나쁘지 않네요!',
+                  status.comment,
                   style: ts.copyWith(
                     fontSize: 20.0,
                     fontWeight: FontWeight.w700,
