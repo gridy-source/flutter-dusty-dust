@@ -57,4 +57,45 @@ class StatModel {
     }
     return ItemCode.values.firstWhere((element) => element.name == raw);
   }
+
+  double getLevelFromRegion(String region) {
+    switch (region) {
+      case '서울':
+        return seoul;
+      case '부산':
+        return busan;
+      case '대구':
+        return daegu;
+      case '인천':
+        return incheon;
+      case '광주':
+        return gwangju;
+      case '대전':
+        return daejeon;
+      case '울산':
+        return ulsan;
+      case '세종':
+        return sejong;
+      case '경기':
+        return gyeonggi;
+      case '강원':
+        return gangwon;
+      case '충북':
+        return chungbuk;
+      case '충남':
+        return chungnam;
+      case '전북':
+        return jeonbuk;
+      case '전남':
+        return jeonnam;
+      case '경북':
+        return gyeonbuk;
+      case '경남':
+        return gyeongnam;
+      case '제주':
+        return jeju;
+      default:
+        throw Exception('알 수 없는 지역입니다.');
+    }
+  }
 }

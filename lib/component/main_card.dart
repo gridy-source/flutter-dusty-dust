@@ -1,11 +1,14 @@
 import 'package:dusty_dust/const/colors.dart';
+import 'package:dusty_dust/model/stat_and_status_model.dart';
 import 'package:flutter/material.dart';
 
 class MainCard extends StatelessWidget {
   final Widget child;
+  final Color backgroundColor;
 
   const MainCard({
     required this.child,
+    required this.backgroundColor,
     Key? key,
   }) : super(key: key);
 
@@ -16,7 +19,7 @@ class MainCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16.0),
       ),
-      color: lightColor,
+      color: backgroundColor,
       child: child,
     );
   }
